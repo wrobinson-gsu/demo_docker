@@ -1,0 +1,23 @@
+<!doctype html>
+<title>Model Score</title>
+<div class=page>
+  <h1>Model Scoring using {{ model }}</h1>
+
+    <h2>Model score for {{ label }} is {{ score }}</h2>
+
+    <form action="/model" method="post">
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Value</th>
+        </tr>
+        {% for item in parameters %}
+            <tr><td>{{item[0]}}</td>
+                <td><input name="{{item[0]}}" value="{{item[1]}}"></td>
+        </tr>
+    {% endfor %}
+    </table>
+    <input type="submit" value="Update">
+    </form>
+
+</div>

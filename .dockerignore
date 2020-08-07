@@ -1,0 +1,6 @@
+#
+.git
+.cache
+Dockerfile*
+.idea
+*~

@@ -1,0 +1,17 @@
+FROM omahoco1/alpine-java-python
+
+# application folder
+ENV APP_DIR /app
+
+# app dir
+RUN mkdir ${APP_DIR}
+VOLUME ${APP_DIR}
+WORKDIR ${APP_DIR}
+
+EXPOSE 5000
+
+COPY entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+
+# exectute start up script
+ENTRYPOINT ["/entrypoint.sh"]

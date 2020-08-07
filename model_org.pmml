@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<PMML xmlns="http://www.dmg.org/PMML-4_3" xmlns:data="http://jpmml.org/jpmml-model/InlineTable" version="4.3">
+	<Header>
+		<Application name="JPMML-SparkML" version="1.5.8"/>
+		<Timestamp>2020-04-16T23:16:00Z</Timestamp>
+	</Header>
+	<DataDictionary>
+		<DataField name="stroke" optype="continuous" dataType="double"/>
+		<DataField name="gender" optype="continuous" dataType="double"/>
+		<DataField name="heart_disease" optype="continuous" dataType="double"/>
+		<DataField name="smoking_history" optype="continuous" dataType="double"/>
+		<DataField name="BMI" optype="continuous" dataType="double"/>
+		<DataField name="age" optype="continuous" dataType="double"/>
+		<DataField name="diabetes" optype="continuous" dataType="double"/>
+		<DataField name="hypertension" optype="continuous" dataType="double"/>
+	</DataDictionary>
+	<TransformationDictionary/>
+	<RegressionModel functionName="regression">
+		<MiningSchema>
+			<MiningField name="stroke" usageType="target"/>
+			<MiningField name="gender"/>
+			<MiningField name="heart_disease"/>
+			<MiningField name="smoking_history"/>
+			<MiningField name="BMI"/>
+			<MiningField name="age"/>
+			<MiningField name="diabetes"/>
+			<MiningField name="hypertension"/>
+		</MiningSchema>
+		<Output>
+			<OutputField name="prediction" optype="continuous" dataType="double"/>
+		</Output>
+		<RegressionTable intercept="-0.003152351502454805">
+			<NumericPredictor name="gender" coefficient="2.3531802404440222E-4"/>
+			<NumericPredictor name="heart_disease" coefficient="0.03700048561432776"/>
+			<NumericPredictor name="smoking_history" coefficient="2.7787775850168485E-4"/>
+			<NumericPredictor name="BMI" coefficient="-4.761343691244934E-4"/>
+			<NumericPredictor name="age" coefficient="6.090447814345962E-4"/>
+			<NumericPredictor name="diabetes" coefficient="0.017830698573123343"/>
+			<NumericPredictor name="hypertension" coefficient="0.015650189788570815"/>
+		</RegressionTable>
+	</RegressionModel>
+</PMML>
